@@ -1,14 +1,15 @@
-import React,{useContext} from 'react';
+import React, {useContext} from "react";
 
-import classes from './Navigation.module.css';
-import AuthContext from '../../store/auth-context';
+import classes from "./Navigation.module.css";
+import AuthContext from "../../store/auth-context";
 
-const Navigation = (props) => {
-
-  const ctx = useContext(AuthContext);
-
+const Navigation = () => {
+  const ctx =  useContext(AuthContext)
   return (
-   
+    // <AuthContext.Consumer>
+    // {/* the consumers takes a child which actually should be a function and as a argument u'll get a context data */}
+    // {(ctx)=>{
+      // return (  
         <nav className={classes.nav}>
       <ul>
         {ctx.isLoggedIn && (
@@ -28,9 +29,13 @@ const Navigation = (props) => {
         )}
       </ul>
     </nav>
+    
       );
- 
-  // );
-};
+    };
+  // }
+   
+    // </AuthContext.Consumer>
+//   );
+// };
 
 export default Navigation;
